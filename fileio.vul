@@ -130,13 +130,6 @@ os.system("find /i "+t+" *."+"f")
 Fme(f)
 os.system("chmod +x "+f)
 ~
-
-
-
-
-
-
-
 Ffbn(f)
 ?p=="posix"
 os.system("find . -name *."+f)
@@ -145,11 +138,7 @@ os.system("find . -name *."+f)
 os.system("dir /s *."+f)
 ;
 ~
-
-
-
-
-Ffbn(f,d)
+Ffbi(f,d)
 ?p=="posix"
 os.system("find "+d+" -name *."+f)
 :
@@ -157,11 +146,7 @@ os.system("find "+d+" -name *."+f)
 os.system("dir "+d+"/s *."+f)
 ;
 ~
-
-
-
-
-Ffbn(f)
+Ffbe(f)
 ?p=="posix"
 os.system("tail -f "+f)
 :
