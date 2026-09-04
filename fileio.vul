@@ -1,0 +1,171 @@
+p=os.name
+Fr(f)
+?p=="posix"
+os.system("cat "+f)
+:
+?p=="nt"
+os.system("type "+f)
+;
+~
+Fh(f,n)
+?p=="posix"
+os.system("head -n "+n+" "+f)
+:
+?p=="nt"
+os.system("Get-Content "+f+"-Head"+n)
+;
+~
+Ft(f,n)
+?p=="posix"
+os.system("tail -n "+n+" "+f)
+:
+?p=="nt"
+os.system("Get-Content "+f+"-Tail"+n)
+;
+~
+Fl(f)
+?p=="posix"
+os.system("nl "+f)
+:
+?p=="nt"
+os.system("findstr /n ^$ "+f)
+;
+~
+Fce(f)
+?p=="posix"
+os.system("touch "+f)
+:
+?p=="nt"
+os.system("type nul > "+f)
+;
+~
+Fct(f,t)
+?p=="posix"
+os.system("echo "+t+" > "+f)
+:
+?p=="nt"
+os.system("echo "+t+"^! > "+f)
+;
+~
+Fa(f,t)
+?p=="posix"
+os.system("echo "+t+" >> "+f)
+:
+?p=="nt"
+os.system("echo "+t+"^! >> "+f)
+;
+~
+Fml(f)
+?p=="posix"
+os.system("cat > ",f)
+:
+?p=="nt"
+os.system("copy con ",f)
+;
+~
+Fc(f,ft)
+?p=="posix"
+os.system("cp "+f+" "+ft)
+:
+?p=="nt"
+os.system("copy "+f+" "+ft)
+;
+~
+Fm(f,ft)
+?p=="posix"
+os.system("mv "+f+" "+ft)
+:
+?p=="nt"
+os.system("move "+f+" "+ft)
+;
+~
+Fd(f)
+?p=="posix"
+os.system("rm "+f)
+:
+?p=="nt"
+os.system("del "+f)
+;
+~
+Fdf(f)
+?p=="posix"
+os.system("rm -f "+f)
+:
+?p=="nt"
+os.system("del /f "+f)
+;
+~
+Fdr(f)
+?p=="posix"
+os.system("rm -rf "+f)
+:
+?p=="nt"
+os.system("rmdir /s "+f)
+;
+~
+Fst(f,t)
+?p=="posix"
+os.system("grep "+t+" "+f)
+:
+?p=="nt"
+os.system("find "+t+" "+"f")
+;
+~
+Fsa(f,t)
+?p=="posix"
+os.system("grep "+t+" *."+f)
+:
+?p=="nt"
+os.system("find "+t+" *."+"f")
+;
+~
+Fci(f,t)
+?p=="posix"
+os.system("grep -i "+t+" *."+f)
+:
+?p=="nt"
+os.system("find /i "+t+" *."+"f")
+;
+~
+Fme(f)
+os.system("chmod +x "+f)
+~
+
+
+
+
+
+
+
+Ffbn(f)
+?p=="posix"
+os.system("find . -name *."+f)
+:
+?p=="nt"
+os.system("dir /s *."+f)
+;
+~
+
+
+
+
+Ffbn(f,d)
+?p=="posix"
+os.system("find "+d+" -name *."+f)
+:
+?p=="nt"
+os.system("dir "+d+"/s *."+f)
+;
+~
+
+
+
+
+Ffbn(f)
+?p=="posix"
+os.system("tail -f "+f)
+:
+?p=="nt"
+os.system("Get-Content "+f+" -Wait")
+;
+~
